@@ -1,0 +1,29 @@
+site_name: Iqra Shakir
+professional_title: Food Scientist
+hero_headline: Food science, quality, and safety.
+short_bio: My background includes Food Science & Technology studies, an academic fruit-juice analysis and shelf-life project, and a six-week internship with the Punjab Food Authority.
+email: iqra.shakir001@gmail.com
+linkedin_url: https://www.linkedin.com/in/iqra-shakir-9a3a8b40a
+phone: "+92 344 8791081"
+location: Lodhran, Punjab, Pakistan
+portrait: /media/my-pic.webp
+portrait_gallery:
+  - image: /media/food-scientist-sample-analysis.webp
+    alt: Food scientist wearing gloves while examining a food sample in a laboratory.
+    caption: Food sample analysis
+  - image: /media/food-scientist-lab-notes.webp
+    alt: Food scientist holding a clipboard beside laboratory food samples.
+    caption: Laboratory notes
+  - image: /media/food-scientist-lab-bench.webp
+    alt: Food scientist working at a laboratory bench with testing equipment.
+    caption: Laboratory work
+  - image: /media/food-scientist-professional.webp
+    alt: Food scientist in a lab coat standing in a laboratory.
+    caption: Food science
+  - image: /media/food-scientist-office.webp
+    alt: Food scientist in a professional office with a laptop and notebook.
+    caption: Planning and review
+cv_file: /media/iqra%20shakir_food_science_cv%20(1).pdf
+social_image: /media/iqra-social-card.webp
+site_url: ""
+services: []

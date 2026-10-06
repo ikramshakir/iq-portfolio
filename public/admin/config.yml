@@ -1,0 +1,101 @@
+backend:
+  name: github
+  repo: "YOUR_GITHUB_OWNER/YOUR_GITHUB_REPOSITORY"
+  branch: main
+media_folder: "public/media"
+public_folder: "/media"
+collections:
+  - name: "site"
+    label: "Site settings"
+    files:
+      - file: "content/site.yml"
+        label: "Site settings"
+        name: "site"
+        fields:
+          - { label: "Site name", name: "site_name", widget: "string" }
+          - { label: "Professional title", name: "professional_title", widget: "string" }
+          - { label: "Homepage headline", name: "hero_headline", widget: "string" }
+          - { label: "Short biography", name: "short_bio", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin_url", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Portrait", name: "portrait", widget: "image" }
+          - label: "Portrait gallery"
+            name: "portrait_gallery"
+            widget: "list"
+            required: false
+            hint: "Add two or more photos for an automatically rotating portrait gallery. Photos change on their own; no visitor controls are shown. The main Portrait is used if this list is empty."
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Alternative text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+          - { label: "CV PDF", name: "cv_file", widget: "file", required: false }
+          - { label: "Social preview image", name: "social_image", widget: "image", required: false, hint: "Use a 1200 x 630 image for social previews." }
+          - { label: "Site URL", name: "site_url", widget: "string", required: false }
+          - label: "Confirmed services"
+            name: "services"
+            widget: "list"
+            required: false
+            hint: "Only list services you have personally confirmed and are prepared to offer."
+            field: { label: "Service", name: "service", widget: "string" }
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+  - name: "work"
+    label: "Work"
+    folder: "content/work"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Project type", name: "project_type", widget: "select", options: ["Academic project", "Independent study", "Professional experience", "Research", "Other"] }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+  - name: "credentials"
+    label: "Education and training"
+    folder: "content/credentials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Detail", name: "detail", widget: "text" }
+      - { label: "Issuer or organization", name: "issuer_or_organization", widget: "string", required: false }
+      - { label: "Credential type", name: "credential_type", widget: "string", required: false }
+      - { label: "Start date", name: "start_date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "End date", name: "end_date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Status", name: "status", widget: "string", required: false }
+      - { label: "Verification URL", name: "verification_url", widget: "string", required: false }
+      - { label: "Sort order", name: "sort_order", widget: "number", default: 100 }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+  - name: "blog"
+    label: "Articles"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Publication date", name: "publish_date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Updated date", name: "updated_date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "References"
+        name: "references"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Publication or date", name: "publication", widget: "string", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }

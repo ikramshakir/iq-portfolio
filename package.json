@@ -1,0 +1,21 @@
+{
+  "name": "iqra-food-scientist-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ./scripts/generate-content.mjs && vite --host",
+    "build": "node ./scripts/generate-content.mjs && vite build && node ./scripts/finalize-build.mjs",
+    "preview": "vite preview --host",
+    "generate": "node ./scripts/generate-content.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "marked": "^18.1.0",
+    "yaml": "^2.8.1"
+  }
+}
